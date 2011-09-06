@@ -45,11 +45,17 @@
 		
 		$growler.append($growl);
 		
-		$growl
-			.animate(options.incoming, options.speed)
-			.delay(options.duration)
-			.animate(options.outgoing, options.speed)
-		;
+		$growl.present = function () { return this.animate(options.incoming, options.speed); };
+		$growl.dismiss = function () { return this.animate(options.outgoing, options.speed); };
+		
+		$growl.present().delay(options.duration).dismiss();
+		
+		$close.click(function () {
+			$growl.stop().dismiss();
+		});
+		
+		return $growl;
+		
 	};
 	
 	$.growler.error = function(options) {
@@ -59,7 +65,7 @@
 			style: 'error',
 		}
 		
-		$.growler.growl($.extend(settings, options));
+		return $.growler.growl($.extend(settings, options));
 		
 	};
 	
@@ -70,7 +76,7 @@
 			style: 'notice',
 		}
 		
-		$.growler.growl($.extend(settings, options));
+		return $.growler.growl($.extend(settings, options));
 		
 	};
 	
@@ -81,7 +87,7 @@
 			style: 'warning',
 		}
 		
-		$.growler.growl($.extend(settings, options));
+		return $.growler.growl($.extend(settings, options));
 		
 	};
     

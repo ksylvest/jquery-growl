@@ -9,9 +9,32 @@
   <link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+  
+  <ul>
+    <li><a href="#" class="error">Error!</a></li>
+    <li><a href="#" class="notice">Notice!</a></li>
+    <li><a href="#" class="warning">Warning!</a></li>
+  </ul>
     
   <script type="text/javascript">
+  
     $.growler.growl({ title: "Growl", message: "The kitten is awake!" });
+    
+    $('a.error').click(function (e) {
+      e.preventDefault();
+      $.growler.error({ message: "The kitten is attacking!" });
+    });
+    
+    $('a.notice').click(function (e) {
+      e.preventDefault();
+      $.growler.notice({ message: "The kitten is cute!" });
+    });
+    
+    $('a.warning').click(function (e) {
+      e.preventDefault();
+      $.growler.warning({ message: "The kitten is ugly!" });
+    });
+    
   </script>
 
 </body>
