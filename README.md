@@ -17,4 +17,4 @@ To install copy the *images*, *javascripts*, and *stylesheets* directories into 
 
 # Copyright
 
-Copyright (c) 2010 - 2011 Kevin Sylvestre. See LICENSE for details.
+Copyright (c) 2010 - 2012 Kevin Sylvestre. See LICENSE for details.
