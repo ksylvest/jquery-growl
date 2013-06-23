@@ -1,0 +1,50 @@
+!!! 5
+%html
+  %head
+    %meta{ charset: "UTF-8" }
+      %title jQuery Growl
+      %link{ href:"https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif", rel: "stylesheet", type: "text/css" }
+      %link{ href:"stylesheets/jquery.growl.css", rel: "stylesheet", type: "text/css" }
+      %link{ href:"stylesheets/sample.css", rel: "stylesheet", type: "text/css" }
+      %script{ src:"https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.js", type: "text/javascript" }
+      %script{ src:"javascripts/jquery.growl.js", type: "text/javascript" }
+      %script{ src:"javascripts/sample.js", type: "text/javascript" }
+      %script{ src: "javascripts/rainbow.js", type: "text/javascript" }
+  %body
+    .content
+      %h1 jQuery Growl
+      %p Growler is a jQuery plugin designed to provide informative messages in the browser.
+      %h2 Example
+      %section.example
+        %p
+          %ul
+            %li
+              %a.error{ href: '#' } Error!
+            %li
+              %a.notice{ href: "#" } Notice!
+            %li
+              %a.warning{ href: "#" } Warning!
+      %h2 Installation
+      %p To install download one of these packages and include the jquery.growl.js and jquery.growl.css files in your head with the following:
+      %section.formats
+        .format
+          %a.zip{ href: "packages/jquery.growl.zip" }
+        .format
+          %a.tar{ href: "packages/jquery.growl.tar" }
+      %pre
+        %code{ data: { language: "html" } }
+          = preserve do
+            :escaped
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
+              <script src="javascript/jquery.growl.js" type="text/javascript"></script>
+              <link href="stylesheets/jquery.growl.css" rel="stylesheet" type="text/css" />
+      %h2 Example
+      %p Growling is easy:
+      %pre
+        %code{ data: { language: "html" } }
+          = preserve do
+            :escaped
+              <script type="text/javascript">
+                $.growl({ title: "Growl", message: "The kitten is awake!" });
+              </script>
+      %p Copyright (c) 2010 - 2013 Kevin Sylvestre.

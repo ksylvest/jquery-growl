@@ -1,20 +1,23 @@
 # jQuery Growler
 
-Growler is a jQuery plugin designed to provide messages.
+Growler is a jQuery plugin designed to provide informative messages in the browser.
 
 ## Installation
 
 To install copy the *images*, *javascripts*, and *stylesheets* directories into your project and add the following snippet to the header:
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="javascripts/jquery.growler.js" type="text/javascript"></script>
-    <link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
+    <script src="javascript/jquery.growl.js" type="text/javascript"></script>
+    <link href="stylesheets/jquery.growl.css" rel="stylesheet" type="text/css" />
+
 ## Examples
 
-    $.growler.growl({ title: "Growl", message: "The kitten is awake!" });
+Growling is easy:
+
+    <script type="text/javascript">
+      $.growl({ title: "Growl", message: "The kitten is awake!" });
+    </script>
 
 # Copyright
 
-Copyright (c) 2010 - 2012 Kevin Sylvestre. See LICENSE for details.
+Copyright (c) 2010 - 2013 Kevin Sylvestre. See LICENSE for details.
