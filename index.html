@@ -49,7 +49,7 @@
       <pre><code data-language='html'>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;&#x000A;&lt;script src=&quot;javascript/jquery.growl.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;&#x000A;&lt;link href=&quot;stylesheets/jquery.growl.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
       <h2>Example</h2>
       <p>Growling is easy:</p>
-      <pre><code data-language='html'>&lt;script type=&quot;text/javascript&quot;&gt;&#x000A;  $.growl({ title: &quot;Growl&quot;, message: &quot;The kitten is awake!&quot; });&#x000A;&lt;/script&gt;</code></pre>
+      <pre><code data-language='html'>&lt;script type=&quot;text/javascript&quot;&gt;&#x000A;  $.growl({ title: &quot;Growl&quot;, message: &quot;The kitten is awake!&quot; });&#x000A;  $.growl.error({ message: &quot;The kitten is attacking!&quot; });&#x000A;  $.growl.notice({ message: &quot;The kitten is cute!&quot; });&#x000A;  $.growl.warning({ message: &quot;The kitten is ugly!&quot; });&#x000A;&lt;/script&gt;</code></pre>
       <p>Copyright (c) 2010 - 2013 Kevin Sylvestre.</p>
     </div>
   </body>

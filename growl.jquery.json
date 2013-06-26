@@ -3,7 +3,7 @@
   "title": "jQuery Growl",
   "description": "Growler is a jQuery plugin designed to provide informative messages in the browser.",
   "keywords": ["alert","animation"],
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
     "name": "Kevin Sylvestre",
     "email": "kevin@ksylvest.com",
