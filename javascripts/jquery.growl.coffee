@@ -1,7 +1,7 @@
 ###
 jQuery Growl
 Copyright 2013 Kevin Sylvestre
-1.0.7
+1.0.8
 ###
 
 "use strict"
