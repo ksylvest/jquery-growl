@@ -1,0 +1,21 @@
+{
+  "name": "growl",
+  "version": "1.0.9",
+  "main": [ "./javascripts/jquery.growl.js","./stylesheets/jquery.growl.css" ],
+  "ignore": 
+  [
+    "**/*.sass",
+    "**/*.coffee",
+    "**/sample.*",
+    "**/rainbow.*",
+    "bourbon",
+    "neat",
+    "packages",
+    "images",
+    "Cakefile",
+    "Gemfile",
+    "Gemfile.*",
+    "index.*"
+  ],
+  "dependencies": { "jquery": "latest" }
+}
