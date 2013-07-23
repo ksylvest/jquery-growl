@@ -2,7 +2,7 @@
 /*
 jQuery Growl
 Copyright 2013 Kevin Sylvestre
-1.0.8
+1.0.9
 */
 
 
@@ -122,7 +122,7 @@ Copyright 2013 Kevin Sylvestre
     };
 
     Growl.prototype.$growls = function() {
-      return this.$_growler != null ? this.$_growler : this.$_growler = $('#growls');
+      return this.$_growls != null ? this.$_growls : this.$_growls = $('#growls');
     };
 
     Growl.prototype.$template = function() {

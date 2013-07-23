@@ -1,6 +1,6 @@
-# jQuery Growler
+# jQuery Growl
 
-Growler is a jQuery plugin designed to provide informative messages in the browser.
+Growl is a jQuery plugin designed to provide informative messages in the browser.
 
 ## Installation
 
@@ -20,6 +20,13 @@ Growling is easy:
       $.growl.notice({ message: "The kitten is cute!" });
       $.growl.warning({ message: "The kitten is ugly!" });
     </script>
+
+## Bower
+
+This plugin is registered under http://bower.io/ to simplify integration. Try:
+
+    npm install -g bower
+    bower install growl
 
 # Copyright
 

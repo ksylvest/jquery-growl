@@ -1,7 +1,7 @@
 {
   "name": "growl",
   "title": "jQuery Growl",
-  "description": "Growler is a jQuery plugin designed to provide informative messages in the browser.",
+  "description": "Growl is a jQuery plugin designed to provide informative messages in the browser.",
   "keywords": ["alert","animation"],
   "version": "1.0.9",
   "author": {
