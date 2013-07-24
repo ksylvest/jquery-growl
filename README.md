@@ -10,6 +10,11 @@ To install copy the *images*, *javascripts*, and *stylesheets* directories into 
     <script src="javascript/jquery.growl.js" type="text/javascript"></script>
     <link href="stylesheets/jquery.growl.css" rel="stylesheet" type="text/css" />
 
+This plugin is also registered under http://bower.io/ to simplify integration. Try:
+
+    npm install -g bower
+    bower install growl
+
 ## Examples
 
 Growling is easy:
@@ -20,13 +25,6 @@ Growling is easy:
       $.growl.notice({ message: "The kitten is cute!" });
       $.growl.warning({ message: "The kitten is ugly!" });
     </script>
-
-## Bower
-
-This plugin is registered under http://bower.io/ to simplify integration. Try:
-
-    npm install -g bower
-    bower install growl
 
 # Copyright
 
