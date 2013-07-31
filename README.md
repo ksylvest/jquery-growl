@@ -30,6 +30,6 @@ Growling is easy:
 
 [![Status](https://travis-ci.org/ksylvest/jquery-growl.png)](https://travis-ci.org/ksylvest/jquery-growl)
 
-# Copyright
+## Copyright
 
 Copyright (c) 2010 - 2013 Kevin Sylvestre. See LICENSE for details.
