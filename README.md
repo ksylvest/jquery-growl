@@ -26,6 +26,10 @@ Growling is easy:
       $.growl.warning({ message: "The kitten is ugly!" });
     </script>
 
+## Status
+
+[![Status](https://travis-ci.org/ksylvest/jquery-growl.png)](https://travis-ci.org/ksylvest/jquery-growl)
+
 # Copyright
 
 Copyright (c) 2010 - 2013 Kevin Sylvestre. See LICENSE for details.
