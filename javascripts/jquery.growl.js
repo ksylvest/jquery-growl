@@ -2,7 +2,7 @@
 /*
 jQuery Growl
 Copyright 2013 Kevin Sylvestre
-1.1.1
+1.1.2
 */
 
 
@@ -19,7 +19,6 @@ Copyright 2013 Kevin Sylvestre
     Animation.transitions = {
       "webkitTransition": "webkitTransitionEnd",
       "mozTransition": "mozTransitionEnd",
-      "msTransition": "msTransitionEnd",
       "oTransition": "oTransitionEnd",
       "transition": "transitionend"
     };
