@@ -42,26 +42,45 @@ class Growl
     @render()
 
   render: =>
-    @$growls().append @$template()
-    @cycle()
+    $growl = @$growl()
+    @$growls().append $growl
+    @cycle($growl)
     return
 
-  cycle: ->
-    @$template()
+  bind: ($growl = @$growl()) =>
+    $growl.find(".#{@settings.namespace}-close").on("click", @close)
+
+  unbind: ($growl = @$growl()) =>
+    $growl.find(".#{@settings.namespace-close}").off("click", @close)
+
+  cycle: ($growl = @$growl()) =>
+    $growl
       .queue(@present)
       .delay(@settings.duration)
       .queue(@dismiss)
       .queue(@remove)
 
+  close: (event) =>
+    event.preventDefault()
+    event.stopPropagation()
+    $growl = @$growl()
+    $growl
+      .stop()
+      .queue(@dismiss)
+      .queue(@remove)
+
   present: (callback) =>
-    $template = 
-    @animate(@$template(), "#{@settings.namespace}-incoming", 'out', callback)
+    $growl = @$growl()
+    @bind($growl)
+    @animate($growl, "#{@settings.namespace}-incoming", 'out', callback)
 
   dismiss: (callback) =>
-    @animate(@$template(), "#{@settings.namespace}-outgoing", 'in', callback)
+    $growl = @$growl()
+    @unbind($growl)
+    @animate($growl, "#{@settings.namespace}-outgoing", 'in', callback)
 
   remove: (callback) =>
-    @$template().remove()
+    @$growl().remove()
     callback()
 
   animate: ($element, name, direction = 'in', callback) =>
@@ -76,10 +95,10 @@ class Growl
   $growls: =>
     @$_growls ?= $('#growls')
 
-  $template: =>
-    @$_template ?= $(@template())
+  $growl: =>
+    @$_growl ?= $(@html())
 
-  template: =>
+  html: =>
     """
       <div class='#{@settings.namespace} #{@settings.namespace}-#{@settings.style} #{@settings.namespace}-#{@settings.size}'>
         <div class='#{@settings.namespace}-close'>#{@settings.close}</div>

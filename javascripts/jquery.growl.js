@@ -65,13 +65,17 @@ Copyright 2013 Kevin Sylvestre
       if (settings == null) {
         settings = {};
       }
-      this.template = __bind(this.template, this);
-      this.$template = __bind(this.$template, this);
+      this.html = __bind(this.html, this);
+      this.$growl = __bind(this.$growl, this);
       this.$growls = __bind(this.$growls, this);
       this.animate = __bind(this.animate, this);
       this.remove = __bind(this.remove, this);
       this.dismiss = __bind(this.dismiss, this);
       this.present = __bind(this.present, this);
+      this.close = __bind(this.close, this);
+      this.cycle = __bind(this.cycle, this);
+      this.unbind = __bind(this.unbind, this);
+      this.bind = __bind(this.bind, this);
       this.render = __bind(this.render, this);
       this.settings = $.extend({}, Growl.settings, settings);
       this.$growls().attr('class', this.settings.location);
@@ -79,25 +83,57 @@ Copyright 2013 Kevin Sylvestre
     }
 
     Growl.prototype.render = function() {
-      this.$growls().append(this.$template());
-      this.cycle();
+      var $growl;
+      $growl = this.$growl();
+      this.$growls().append($growl);
+      this.cycle($growl);
     };
 
-    Growl.prototype.cycle = function() {
-      return this.$template().queue(this.present).delay(this.settings.duration).queue(this.dismiss).queue(this.remove);
+    Growl.prototype.bind = function($growl) {
+      if ($growl == null) {
+        $growl = this.$growl();
+      }
+      return $growl.find("." + this.settings.namespace + "-close").on("click", this.close);
+    };
+
+    Growl.prototype.unbind = function($growl) {
+      if ($growl == null) {
+        $growl = this.$growl();
+      }
+      return $growl.find("." + (this.settings.namespace - close)).off("click", this.close);
+    };
+
+    Growl.prototype.cycle = function($growl) {
+      if ($growl == null) {
+        $growl = this.$growl();
+      }
+      return $growl.queue(this.present).delay(this.settings.duration).queue(this.dismiss).queue(this.remove);
+    };
+
+    Growl.prototype.close = function(event) {
+      var $growl;
+      event.preventDefault();
+      event.stopPropagation();
+      $growl = this.$growl();
+      return $growl.stop().queue(this.dismiss).queue(this.remove);
     };
 
     Growl.prototype.present = function(callback) {
-      var $template;
-      return $template = this.animate(this.$template(), "" + this.settings.namespace + "-incoming", 'out', callback);
+      var $growl;
+      $growl = this.$growl();
+      this.bind($growl);
+      return this.animate($growl, "" + this.settings.namespace + "-incoming", 'out', callback);
     };
 
     Growl.prototype.dismiss = function(callback) {
-      return this.animate(this.$template(), "" + this.settings.namespace + "-outgoing", 'in', callback);
+      var $growl;
+      $growl = this.$growl();
+      this.unbind($growl);
+      return this.animate($growl, "" + this.settings.namespace + "-outgoing", 'in', callback);
     };
 
     Growl.prototype.remove = function(callback) {
-      this.$template().remove();
+      this.$growl().remove();
       return callback();
     };
 
@@ -124,11 +160,11 @@ Copyright 2013 Kevin Sylvestre
       return this.$_growls != null ? this.$_growls : this.$_growls = $('#growls');
     };
 
-    Growl.prototype.$template = function() {
-      return this.$_template != null ? this.$_template : this.$_template = $(this.template());
+    Growl.prototype.$growl = function() {
+      return this.$_growl != null ? this.$_growl : this.$_growl = $(this.html());
     };
 
-    Growl.prototype.template = function() {
+    Growl.prototype.html = function() {
       return "<div class='" + this.settings.namespace + " " + this.settings.namespace + "-" + this.settings.style + " " + this.settings.namespace + "-" + this.settings.size + "'>\n  <div class='" + this.settings.namespace + "-close'>" + this.settings.close + "</div>\n  <div class='" + this.settings.namespace + "-title'>" + this.settings.title + "</div>\n  <div class='" + this.settings.namespace + "-message'>" + this.settings.message + "</div>\n</div>";
     };
 
