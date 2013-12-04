@@ -4,7 +4,7 @@ Growl is a jQuery plugin designed to provide informative messages in the browser
 
 ## Installation
 
-To install copy the *images*, *javascripts*, and *stylesheets* directories into your project and add the following snippet to the header:
+To install copy the *javascripts*, and *stylesheets* directories into your project and add the following snippet to the header:
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
     <script src="javascript/jquery.growl.js" type="text/javascript"></script>
