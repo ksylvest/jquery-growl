@@ -1,10 +1,14 @@
 /*
  * jQuery Growl
  * Copyright 2013 Kevin Sylvestre
- * 1.1.4
+ * 1.1.5
  */
 
 @import bourbon/bourbon
+
+@mixin opacity($amount)
+  opacity: $amount
+  filter: alpha(opacity = $amount * 100)
 
 $namespace: "growl"
 
@@ -33,17 +37,17 @@ $duration: 0.4s
     bottom: 10px
     right: 10px
 
-.growl
-  opacity: 0.8
+.#{$namespace}
+  +opacity(0.8)
   position: relative
   border-radius: 4px
   +transition(all $duration ease-in-out)
 
   &.#{$namespace}-incoming
-    opacity: 0.0
+    +opacity(0.0)
 
   &.#{$namespace}-outgoing
-    opacity: 0.0
+    +opacity(0.0)
 
   &.#{$namespace}-small
     width: 200px
