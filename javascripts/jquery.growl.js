@@ -93,14 +93,14 @@ Copyright 2013 Kevin Sylvestre
       if ($growl == null) {
         $growl = this.$growl();
       }
-      return $growl.find("." + this.settings.namespace + "-close").on("click", this.close);
+      return $growl.on("contextmenu", this.close).find("." + this.settings.namespace + "-close").on("click", this.close);
     };
 
     Growl.prototype.unbind = function($growl) {
       if ($growl == null) {
         $growl = this.$growl();
       }
-      return $growl.find("." + (this.settings.namespace - close)).off("click", this.close);
+      return $growl.off("contextmenu", this.close).find("." + (this.settings.namespace - close)).off("click", this.close);
     };
 
     Growl.prototype.cycle = function($growl) {
