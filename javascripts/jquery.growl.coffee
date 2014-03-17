@@ -37,6 +37,8 @@ class Growl
     $("body:not(:has(#growls))").append '<div id="growls" />'
 
   constructor: (settings = {}) ->
+    if(settings.static)
+        settings.duration=99999999999; 
     @settings = $.extend {}, Growl.settings, settings
     @$growls().attr 'class', @settings.location
     @render()
