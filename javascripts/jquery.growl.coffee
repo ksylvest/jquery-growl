@@ -37,8 +37,6 @@ class Growl
     $("body:not(:has(#growls))").append '<div id="growls" />'
 
   constructor: (settings = {}) ->
-    if(settings.static)
-        settings.duration=99999999999; 
     @settings = $.extend {}, Growl.settings, settings
     @$growls().attr 'class', @settings.location
     @render()
@@ -46,7 +44,7 @@ class Growl
   render: =>
     $growl = @$growl()
     @$growls().append $growl
-    @cycle($growl)
+    if @settings.static? then @present() else @cycle()
     return
 
   bind: ($growl = @$growl()) =>
@@ -55,19 +53,20 @@ class Growl
   unbind: ($growl = @$growl()) =>
     $growl.off("contextmenu", @close).find(".#{@settings.namespace-close}").off("click", @close)
 
-  cycle: ($growl = @$growl()) =>
-    $growl
-      .queue(@present)
-      .delay(@settings.duration)
-      .queue(@dismiss)
-      .queue(@remove)
-
   close: (event) =>
     event.preventDefault()
     event.stopPropagation()
     $growl = @$growl()
     $growl
       .stop()
+      .queue(@dismiss)
+      .queue(@remove)
+
+  cycle: =>
+    $growl = @$growl()
+    $growl
+      .queue(@present)
+      .delay(@settings.duration)
       .queue(@dismiss)
       .queue(@remove)
 
