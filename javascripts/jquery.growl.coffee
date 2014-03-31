@@ -48,10 +48,10 @@ class Growl
     return
 
   bind: ($growl = @$growl()) =>
-    $growl.find(".#{@settings.namespace}-close").on("click", @close)
+    $growl.on("contextmenu", @close).find(".#{@settings.namespace}-close").on("click", @close)
 
   unbind: ($growl = @$growl()) =>
-    $growl.find(".#{@settings.namespace-close}").off("click", @close)
+    $growl.off("contextmenu", @close).find(".#{@settings.namespace-close}").off("click", @close)
 
   cycle: ($growl = @$growl()) =>
     $growl
