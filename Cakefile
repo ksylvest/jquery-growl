@@ -23,5 +23,5 @@ task "compile", "HAML", (opions) ->
   command "haml", "index.haml", "index.html"
 
 task "package", "Package CSS and JS", (options) ->
-  command "zip", "packages/#{PROJECT}.zip", "javascripts/#{PROJECT}.js"
-  command "tar", "-cf", "packages/#{PROJECT}.tar", "javascripts/#{PROJECT}.js"
+  command "zip", "packages/#{PROJECT}.zip", "javascripts/#{PROJECT}.js", "stylesheets/#{PROJECT}.css"
+  command "tar", "-cf", "packages/#{PROJECT}.tar", "javascripts/#{PROJECT}.js", "stylesheets/#{PROJECT}.css"
