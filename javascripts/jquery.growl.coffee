@@ -104,7 +104,7 @@ class Growl
   animate: ($element, name, direction = 'in', callback) =>
     transition = Animation.transition($element)
     $element[if direction is 'in' then 'removeClass' else 'addClass'](name)
-    $element.offset().pposition
+    $element.offset().position
     $element[if direction is 'in' then 'addClass' else 'removeClass'](name)
     return unless callback?
     if transition? then $element.one(transition, callback) else callback()
