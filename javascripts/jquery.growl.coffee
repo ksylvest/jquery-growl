@@ -21,6 +21,16 @@ class Animation
 
 class Growl
 
+  @_growlings: []
+
+  @_add: (growling) ->
+      index = @_growlings.length
+      @_growlings.push growling
+      index
+
+  @_remove: (index) ->
+      @_growlings.splice index, 1
+
   @settings:
     namespace: 'growl'
     duration: 3200
@@ -45,6 +55,7 @@ class Growl
     $growl = @$growl()
     @$growls().append $growl
     if @settings.static? then @present() else @cycle()
+    @index = Growl._add @;
     return
 
   bind: ($growl = @$growl()) =>
@@ -64,11 +75,16 @@ class Growl
 
   cycle: =>
     $growl = @$growl()
-    $growl
-      .queue(@present)
-      .delay(@settings.duration)
-      .queue(@dismiss)
-      .queue(@remove)
+    queue = $growl
+            .queue(@present)
+
+    if false != @settings.duration    
+      queue
+        .delay(@settings.duration)
+        .queue(@dismiss)
+        .queue(@remove)
+
+    queue
 
   present: (callback) =>
     $growl = @$growl()
@@ -82,12 +98,13 @@ class Growl
 
   remove: (callback) =>
     @$growl().remove()
+    Growl._remove @index
     callback()
 
   animate: ($element, name, direction = 'in', callback) =>
     transition = Animation.transition($element)
     $element[if direction is 'in' then 'removeClass' else 'addClass'](name)
-    $element.offset().position
+    $element.offset().pposition
     $element[if direction is 'in' then 'addClass' else 'removeClass'](name)
     return unless callback?
     if transition? then $element.one(transition, callback) else callback()
@@ -131,3 +148,13 @@ $.growl.warning = (options = {}) ->
     style: "warning"
 
   $.growl $.extend(settings, options)
+
+$.growl.removeAll = ->
+  $.growl.remove growling for growling in Growl._growlings    
+  return
+
+$.growl.remove = (growling) ->
+  growling.$growl()
+      .queue(growling.dismiss)
+      .queue(growling.remove)
+  return
