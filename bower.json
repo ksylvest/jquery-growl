@@ -4,18 +4,29 @@
   "main": [ "./javascripts/jquery.growl.js","./stylesheets/jquery.growl.css" ],
   "ignore": 
   [
+    "README*",
+    "LICENSE*",
     "**/*.sass",
     "**/*.coffee",
     "**/sample.*",
-    "**/rainbow.*",
+    "**/rainbow.js",
+    "**/rainbow.css",
+    "**/jquery.js",
+    "**/jquery.css",
+    "samples",
+    "spec",
     "bourbon",
     "neat",
     "packages",
     "images",
-    "Cakefile",
-    "Gemfile",
-    "Gemfile.*",
-    "index.*"
+    "Cakefile*",
+    "Rakefile*",
+    "Gemfile*",
+    ".git*",
+    ".travis*",
+    "*bower.json",
+    "*jquery.json",
+    "index*"
   ],
   "dependencies": { "jquery": "latest" }
 }
