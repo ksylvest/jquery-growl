@@ -1,7 +1,7 @@
 /*
  * jQuery Growl
  * Copyright 2013 Kevin Sylvestre
- * 1.1.8
+ * 1.1.9
  */
 
 @import bourbon/bourbon
@@ -36,6 +36,19 @@ $duration: 0.4s
   &.br
     bottom: 10px
     right: 10px
+  &.tc
+    top: 10px
+    right: 10px
+    left: 10px
+  &.bc
+    top: 10px
+    right: 10px
+    left: 10px
+  &.tc,&.bc
+    .#{$namespace}
+      margin:
+        left:  auto
+        right: auto
 
 .#{$namespace}
   +opacity(0.8)

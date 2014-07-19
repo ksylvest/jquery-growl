@@ -1,6 +1,6 @@
 /* jQuery Growl
  * Copyright 2013 Kevin Sylvestre
- * 1.1.8
+ * 1.1.9
  */
 #growls {
   z-index: 50000;
@@ -20,6 +20,17 @@
   #growls.br {
     bottom: 10px;
     right: 10px; }
+  #growls.tc {
+    top: 10px;
+    right: 10px;
+    left: 10px; }
+  #growls.bc {
+    top: 10px;
+    right: 10px;
+    left: 10px; }
+  #growls.tc .growl, #growls.bc .growl {
+    margin-left: auto;
+    margin-right: auto; }
 
 .growl {
   opacity: 0.8;
