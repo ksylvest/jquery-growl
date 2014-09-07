@@ -12,14 +12,14 @@ code {
   font-weight: normal; }
 
 body, html, p, code {
-  color: #888888; }
+  color: #888; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444; }
+  color: #444; }
 
 pre {
   overflow: scroll;
-  background: #eeeeee;
+  background: #EEE;
   padding: 10px; }
 
 .content {
@@ -48,8 +48,10 @@ pre {
   border: 0; }
 
 pre .support.tag {
-  color: #000088; }
+  color: #008; }
 pre .support.attribute {
-  color: #880000; }
+  color: #800; }
 pre .string.value {
-  color: #008800; }
+  color: #080; }
+
+/*# sourceMappingURL=sample.css.map */

@@ -1,6 +1,6 @@
 /* jQuery Growl
  * Copyright 2013 Kevin Sylvestre
- * 1.2.0
+ * 1.2.1
  */
 #growls {
   z-index: 50000;
@@ -59,17 +59,17 @@
     padding: 15px;
     margin: 15px; }
   .growl.growl-default {
-    color: white;
+    color: #FFF;
     background: #7f8c8d; }
   .growl.growl-error {
-    color: white;
-    background: #c0392b; }
+    color: #FFF;
+    background: #C0392B; }
   .growl.growl-notice {
-    color: white;
-    background: #2ecc71; }
+    color: #FFF;
+    background: #2ECC71; }
   .growl.growl-warning {
-    color: white;
-    background: #f39c12; }
+    color: #FFF;
+    background: #F39C12; }
   .growl .growl-close {
     cursor: pointer;
     float: right;
@@ -83,3 +83,5 @@
   .growl .growl-message {
     font-size: 14px;
     line-height: 18px; }
+
+/*# sourceMappingURL=jquery.growl.css.map */

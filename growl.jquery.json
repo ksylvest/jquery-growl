@@ -3,7 +3,7 @@
   "title": "jQuery Growl",
   "description": "Growl is a jQuery plugin designed to provide informative messages in the browser.",
   "keywords": ["alert","animation"],
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": {
     "name": "Kevin Sylvestre",
     "email": "kevin@ksylvest.com",
