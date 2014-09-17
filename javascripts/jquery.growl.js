@@ -2,7 +2,7 @@
 /*
 jQuery Growl
 Copyright 2013 Kevin Sylvestre
-1.2.2
+1.2.3
 */
 
 
