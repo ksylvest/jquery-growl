@@ -104,7 +104,7 @@ Copyright 2013 Kevin Sylvestre
       if ($growl == null) {
         $growl = this.$growl();
       }
-      return $growl.off("contextmenu", this.close).find("." + (this.settings.namespace - close)).off("click", this.close);
+      return $growl.off("contextmenu", this.close).find("." + this.settings.namespace + "-close").off("click", this.close);
     };
 
     Growl.prototype.close = function(event) {
