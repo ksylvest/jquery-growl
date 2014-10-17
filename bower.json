@@ -1,6 +1,6 @@
 {
   "name": "growl",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "main": [ "./javascripts/jquery.growl.js","./stylesheets/jquery.growl.css" ],
   "ignore": 
   [
