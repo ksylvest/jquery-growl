@@ -51,7 +51,7 @@ class Growl
     $growl.on("contextmenu", @close).find(".#{@settings.namespace}-close").on("click", @close)
 
   unbind: ($growl = @$growl()) =>
-    $growl.off("contextmenu", @close).find(".#{@settings.namespace-close}").off("click", @close)
+    $growl.off("contextmenu", @close).find(".#{@settings.namespace}-close").off("click", @close)
 
   close: (event) =>
     event.preventDefault()
