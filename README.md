@@ -47,6 +47,15 @@ Growling is easy:
       $.growl.warning({ message: "The kitten is ugly!" });
     </script>
 
+## Advanced
+
+Growl also supports some customization through the following options:
+
+- **static**: (true / false) enable or disable the auto-dismiss functionality (default: false)
+- **size**: ('small' / 'medium' / 'large') customize the sizing of the alerts (default: 'medium')
+- **style**: ('default' / 'error' / 'notice' / 'warning') customize the styling of the alerts (default: 'default')
+- **location**: ('tl' / 'tr' / 'bl' / 'br' / 'tc' / 'bc') customize the position of the growl alerts (default: 'tr')
+
 ## Status
 
 [![Status](https://travis-ci.org/ksylvest/jquery-growl.png)](https://travis-ci.org/ksylvest/jquery-growl)
