@@ -14,8 +14,8 @@ command = (name, args...) ->
   proc.on "exit", (status) -> process.exit(1) if status != 0
 
 task "watch", "SASS and CoffeeScript", (options) ->
-  command "sass", "--watch", "stylesheets:stylesheets"
-  command "sass", "--watch", "spec:spec"
+  command "sass", "--watch", "--sourcemap=none", "stylesheets:stylesheets"
+  command "sass", "--watch", "--sourcemap=none", "spec:spec"
   command "coffee", "-wc", "javascripts"
   command "coffee", "-wc", "spec"
 
