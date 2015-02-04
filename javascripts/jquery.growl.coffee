@@ -1,6 +1,6 @@
 ###
 jQuery Growl
-Copyright 2013 Kevin Sylvestre
+Copyright 2015 Kevin Sylvestre
 1.2.4
 ###
 
