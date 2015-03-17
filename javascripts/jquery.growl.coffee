@@ -43,7 +43,7 @@ class Growl
 
   render: =>
     $growl = @$growl()
-    @$growls().append $growl
+    @$growls().prepend $growl
     if @settings.static? then @present() else @cycle()
     return
 
