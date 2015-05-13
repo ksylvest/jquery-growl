@@ -1,7 +1,7 @@
 ###
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.2.5
+1.2.6
 ###
 
 "use strict"
@@ -44,7 +44,13 @@ class Growl
   render: =>
     $growl = @$growl()
     @$growls().append $growl
-    if @settings.static? then @present() else @cycle()
+    
+    # Note: static has been renamed to fixed and will be removed in the future
+    if @settings['static']?
+      console?.debug?('DEPRECATION: static has been renamed to fix and will be removed in the next release')
+      @settings['fixed'] = @settings['static'] 
+
+    if @settings.fixed then @present() else @cycle()
     return
 
   bind: ($growl = @$growl()) =>
