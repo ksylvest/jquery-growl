@@ -89,7 +89,7 @@ Copyright 2015 Kevin Sylvestre
       if (this.settings['static'] != null) {
         if (typeof console !== "undefined" && console !== null) {
           if (typeof console.debug === "function") {
-            console.debug('DEPRECIATION: static has been renamed to fix and will be removed in the next release');
+            console.debug('DEPRECATION: static has been renamed to fix and will be removed in the next release');
           }
         }
         this.settings['fixed'] = this.settings['static'];
