@@ -47,7 +47,7 @@ class Growl
     
     # Note: static has been renamed to fixed and will be removed in the future
     if @settings['static']?
-      console?.debug?('DEPRECATION: static has been renamed to fix and will be removed in the next release')
+      console?.debug?('[jquery.growl] DEPRECATION WARNING: The option `static` has been renamed to `fixed` and will be removed in the next release')
       @settings['fixed'] = @settings['static'] 
 
     if @settings.fixed then @present() else @cycle()
