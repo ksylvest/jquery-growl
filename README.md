@@ -55,6 +55,7 @@ Growl also supports some customization through the following options:
 - **size**: ('small' / 'medium' / 'large') customize the sizing of the alerts (default: 'medium')
 - **style**: ('default' / 'error' / 'notice' / 'warning') customize the styling of the alerts (default: 'default')
 - **location**: ('tl' / 'tr' / 'bl' / 'br' / 'tc' / 'bc') customize the position of the growl alerts (default: 'tr')
+- **duration**: milliseconds to display alert when fixed is false (default: 3200)
 
 ### Deprecations
 
