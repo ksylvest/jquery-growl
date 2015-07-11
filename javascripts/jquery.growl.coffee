@@ -1,7 +1,7 @@
 ###
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.2.7
+1.2.8
 ###
 
 "use strict"
@@ -54,10 +54,18 @@ class Growl
     return
 
   bind: ($growl = @$growl()) =>
+    $growl.on("click", @click)
     $growl.on("contextmenu", @close).find(".#{@settings.namespace}-close").on("click", @close)
 
   unbind: ($growl = @$growl()) =>
+    $growl.off("click", @click)
     $growl.off("contextmenu", @close).find(".#{@settings.namespace}-close").off("click", @close)
+
+  click: (event) =>
+    if @settings.url?
+      event.preventDefault()
+      event.stopPropagation()
+      window.open(@settings.url)
 
   close: (event) =>
     event.preventDefault()
