@@ -3,7 +3,7 @@
 /*
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.2.8
+1.2.9
  */
 
 (function() {
@@ -65,6 +65,8 @@ Copyright 2015 Kevin Sylvestre
       if (settings == null) {
         settings = {};
       }
+      this.container = bind(this.container, this);
+      this.content = bind(this.content, this);
       this.html = bind(this.html, this);
       this.$growl = bind(this.$growl, this);
       this.$growls = bind(this.$growls, this);
@@ -87,14 +89,6 @@ Copyright 2015 Kevin Sylvestre
       var $growl;
       $growl = this.$growl();
       this.$growls().append($growl);
-      if (this.settings['static'] != null) {
-        if (typeof console !== "undefined" && console !== null) {
-          if (typeof console.debug === "function") {
-            console.debug('jquery.growl DEPRECATION: "static" has been renamed to "fixed" and will be removed in the next release');
-          }
-        }
-        this.settings['fixed'] = this.settings['static'];
-      }
       if (this.settings.fixed) {
         this.present();
       } else {
@@ -187,6 +181,14 @@ Copyright 2015 Kevin Sylvestre
     };
 
     Growl.prototype.html = function() {
+      return this.container(this.content());
+    };
+
+    Growl.prototype.content = function() {
+      return "<div class='" + this.settings.namespace + "-close'>" + this.settings.close + "</div>\n<div class='" + this.settings.namespace + "-title'>" + this.settings.title + "</div>\n<div class='" + this.settings.namespace + "-message'>" + this.settings.message + "</div>";
+    };
+
+    Growl.prototype.container = function(content) {
       return "<div class='" + this.settings.namespace + " " + this.settings.namespace + "-" + this.settings.style + " " + this.settings.namespace + "-" + this.settings.size + "'>\n  <div class='" + this.settings.namespace + "-close'>" + this.settings.close + "</div>\n  <div class='" + this.settings.namespace + "-title'>" + this.settings.title + "</div>\n  <div class='" + this.settings.namespace + "-message'>" + this.settings.message + "</div>\n</div>";
     };
 

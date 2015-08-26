@@ -1,7 +1,7 @@
 ###
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.2.8
+1.2.9
 ###
 
 "use strict"
@@ -44,12 +44,6 @@ class Growl
   render: =>
     $growl = @$growl()
     @$growls().append $growl
-    
-    # Note: static has been renamed to fixed and will be removed in the future
-    if @settings['static']?
-      console?.debug?('jquery.growl DEPRECATION: "static" has been renamed to "fixed" and will be removed in the next release')
-      @settings['fixed'] = @settings['static'] 
-
     if @settings.fixed then @present() else @cycle()
     return
 
@@ -114,12 +108,22 @@ class Growl
     @$_growl ?= $(@html())
 
   html: =>
+    @container(@content())
+
+  content: =>
     """
-      <div class='#{@settings.namespace} #{@settings.namespace}-#{@settings.style} #{@settings.namespace}-#{@settings.size}'>
-        <div class='#{@settings.namespace}-close'>#{@settings.close}</div>
-        <div class='#{@settings.namespace}-title'>#{@settings.title}</div>
-        <div class='#{@settings.namespace}-message'>#{@settings.message}</div>
-      </div>
+    <div class='#{@settings.namespace}-close'>#{@settings.close}</div>
+    <div class='#{@settings.namespace}-title'>#{@settings.title}</div>
+    <div class='#{@settings.namespace}-message'>#{@settings.message}</div>
+    """
+
+  container: (content) =>
+    """
+    <div class='#{@settings.namespace} #{@settings.namespace}-#{@settings.style} #{@settings.namespace}-#{@settings.size}'>
+      <div class='#{@settings.namespace}-close'>#{@settings.close}</div>
+      <div class='#{@settings.namespace}-title'>#{@settings.title}</div>
+      <div class='#{@settings.namespace}-message'>#{@settings.message}</div>
+    </div>
     """
 
 $.growl = (options = {}) ->
