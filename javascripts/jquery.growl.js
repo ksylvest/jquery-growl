@@ -3,7 +3,7 @@
 /*
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.3.0
+1.3.1
  */
 
 (function() {
@@ -189,7 +189,7 @@ Copyright 2015 Kevin Sylvestre
     };
 
     Growl.prototype.container = function(content) {
-      return "<div class='" + this.settings.namespace + " " + this.settings.namespace + "-" + this.settings.style + " " + this.settings.namespace + "-" + this.settings.size + "'>\n  <div class='" + this.settings.namespace + "-close'>" + this.settings.close + "</div>\n  <div class='" + this.settings.namespace + "-title'>" + this.settings.title + "</div>\n  <div class='" + this.settings.namespace + "-message'>" + this.settings.message + "</div>\n</div>";
+      return "<div class='" + this.settings.namespace + " " + this.settings.namespace + "-" + this.settings.style + " " + this.settings.namespace + "-" + this.settings.size + "'>\n  " + content + "\n</div>";
     };
 
     return Growl;

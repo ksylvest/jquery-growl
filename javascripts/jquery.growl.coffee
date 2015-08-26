@@ -1,7 +1,7 @@
 ###
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.3.0
+1.3.1
 ###
 
 "use strict"
@@ -120,9 +120,7 @@ class Growl
   container: (content) =>
     """
     <div class='#{@settings.namespace} #{@settings.namespace}-#{@settings.style} #{@settings.namespace}-#{@settings.size}'>
-      <div class='#{@settings.namespace}-close'>#{@settings.close}</div>
-      <div class='#{@settings.namespace}-title'>#{@settings.title}</div>
-      <div class='#{@settings.namespace}-message'>#{@settings.message}</div>
+      #{content}
     </div>
     """
 
