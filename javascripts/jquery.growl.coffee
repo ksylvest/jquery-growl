@@ -1,7 +1,7 @@
 ###
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.2.9
+1.3.0
 ###
 
 "use strict"
@@ -125,6 +125,8 @@ class Growl
       <div class='#{@settings.namespace}-message'>#{@settings.message}</div>
     </div>
     """
+
+@Growl = Growl
 
 $.growl = (options = {}) ->
   Growl.growl(options)

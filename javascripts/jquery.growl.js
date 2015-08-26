@@ -3,7 +3,7 @@
 /*
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.2.9
+1.3.0
  */
 
 (function() {
@@ -195,6 +195,8 @@ Copyright 2015 Kevin Sylvestre
     return Growl;
 
   })();
+
+  this.Growl = Growl;
 
   $.growl = function(options) {
     if (options == null) {
