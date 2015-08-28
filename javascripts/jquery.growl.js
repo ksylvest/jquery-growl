@@ -46,7 +46,8 @@ Copyright 2015 Kevin Sylvestre
       close: "&#215;",
       location: "default",
       style: "default",
-      size: "medium"
+      size: "medium",
+      delayOnHover: true
     };
 
     Growl.growl = function(settings) {
@@ -74,9 +75,12 @@ Copyright 2015 Kevin Sylvestre
       this.remove = bind(this.remove, this);
       this.dismiss = bind(this.dismiss, this);
       this.present = bind(this.present, this);
+      this.waitAndDismiss = bind(this.waitAndDismiss, this);
       this.cycle = bind(this.cycle, this);
       this.close = bind(this.close, this);
       this.click = bind(this.click, this);
+      this.mouseLeave = bind(this.mouseLeave, this);
+      this.mouseEnter = bind(this.mouseEnter, this);
       this.unbind = bind(this.unbind, this);
       this.bind = bind(this.bind, this);
       this.render = bind(this.render, this);
@@ -101,6 +105,10 @@ Copyright 2015 Kevin Sylvestre
         $growl = this.$growl();
       }
       $growl.on("click", this.click);
+      if (this.settings.delayOnHover) {
+        $growl.on("mouseenter", this.mouseEnter);
+        $growl.on("mouseleave", this.mouseLeave);
+      }
       return $growl.on("contextmenu", this.close).find("." + this.settings.namespace + "-close").on("click", this.close);
     };
 
@@ -109,7 +117,21 @@ Copyright 2015 Kevin Sylvestre
         $growl = this.$growl();
       }
       $growl.off("click", this.click);
+      if (this.settings.delayOnHover) {
+        $growl.off("mouseenter", this.mouseEnter);
+        $growl.off("mouseleave", this.mouseLeave);
+      }
       return $growl.off("contextmenu", this.close).find("." + this.settings.namespace + "-close").off("click", this.close);
+    };
+
+    Growl.prototype.mouseEnter = function(event) {
+      var $growl;
+      $growl = this.$growl();
+      return $growl.stop(true, true);
+    };
+
+    Growl.prototype.mouseLeave = function(event) {
+      return this.waitAndDismiss();
     };
 
     Growl.prototype.click = function(event) {
@@ -131,7 +153,13 @@ Copyright 2015 Kevin Sylvestre
     Growl.prototype.cycle = function() {
       var $growl;
       $growl = this.$growl();
-      return $growl.queue(this.present).delay(this.settings.duration).queue(this.dismiss).queue(this.remove);
+      return $growl.queue(this.present).queue(this.waitAndDismiss());
+    };
+
+    Growl.prototype.waitAndDismiss = function() {
+      var $growl;
+      $growl = this.$growl();
+      return $growl.delay(this.settings.duration).queue(this.dismiss).queue(this.remove);
     };
 
     Growl.prototype.present = function(callback) {

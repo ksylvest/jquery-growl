@@ -28,6 +28,7 @@ class Growl
     location: "default"
     style: "default"
     size: "medium"
+    delayOnHover: true
 
   @growl: (settings = {}) ->
     @initialize()
@@ -49,11 +50,25 @@ class Growl
 
   bind: ($growl = @$growl()) =>
     $growl.on("click", @click)
+    if(@settings.delayOnHover)
+      $growl.on("mouseenter", @mouseEnter)
+      $growl.on("mouseleave", @mouseLeave)
     $growl.on("contextmenu", @close).find(".#{@settings.namespace}-close").on("click", @close)
 
   unbind: ($growl = @$growl()) =>
     $growl.off("click", @click)
+    if(@settings.delayOnHover)
+      $growl.off("mouseenter", @mouseEnter)
+      $growl.off("mouseleave", @mouseLeave)
     $growl.off("contextmenu", @close).find(".#{@settings.namespace}-close").off("click", @close)
+
+  mouseEnter: (event) =>
+    $growl = @$growl()
+    $growl
+      .stop(true,true)
+
+  mouseLeave: (event) =>
+    @waitAndDismiss()
 
   click: (event) =>
     if @settings.url?
@@ -74,6 +89,11 @@ class Growl
     $growl = @$growl()
     $growl
       .queue(@present)
+      .queue(@waitAndDismiss())
+
+  waitAndDismiss: =>
+    $growl = @$growl()
+    $growl
       .delay(@settings.duration)
       .queue(@dismiss)
       .queue(@remove)
