@@ -28,7 +28,7 @@ class Growl
     location: "default"
     style: "default"
     size: "medium"
-    delayOnHover: false
+    delayOnHover: true
 
   @growl: (settings = {}) ->
     @initialize()

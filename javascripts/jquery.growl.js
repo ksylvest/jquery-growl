@@ -47,7 +47,7 @@ Copyright 2015 Kevin Sylvestre
       location: "default",
       style: "default",
       size: "medium",
-      delayOnHover: false
+      delayOnHover: true
     };
 
     Growl.growl = function(settings) {
