@@ -194,7 +194,7 @@ Copyright 2015 Kevin Sylvestre
       if (callback == null) {
         return;
       }
-      if ((transition != null) && waitForTransition === true) {
+      if ((transition != null) && this.settings.waitForTransition === true) {
         $element.one(transition, callback);
       } else {
         callback();
