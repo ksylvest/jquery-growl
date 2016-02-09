@@ -29,6 +29,7 @@ class Growl
     style: "default"
     size: "medium"
     delayOnHover: true
+    waitForTransition: true
 
   @growl: (settings = {}) ->
     @initialize()
@@ -118,7 +119,7 @@ class Growl
     $element.offset().position
     $element[if direction is 'in' then 'addClass' else 'removeClass'](name)
     return unless callback?
-    if transition? then $element.one(transition, callback) else callback()
+    if transition? and @settings.waitForTransition is true then $element.one(transition, callback) else callback()
     return
 
   $growls: =>
