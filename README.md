@@ -56,6 +56,7 @@ Growl also supports some customization through the following options:
 - **style**: ('default' / 'error' / 'notice' / 'warning') customize the styling of the alerts (default: 'default')
 - **location**: ('tl' / 'tr' / 'bl' / 'br' / 'tc' / 'bc') customize the position of the growl alerts (default: 'tr')
 - **delayOnHover**: (true / false) prevent the growl from dismissing when mouse is over. (default: true)
+- **waitForTransition**: (true / false) If CSS transition is present during animation, wait for it to end before firing callback (default: true). Note: If you have restyled a notifcation and it does not dismiss when you click the close button, set this to false to ignore the CSS transition event.
 
 ### Deprecations
 
