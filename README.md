@@ -47,15 +47,16 @@ Growling is easy:
       $.growl.warning({ message: "The kitten is ugly!" });
     </script>
 
-## Advanced
+## Advanced Options
 
 Growl also supports some customization through the following options:
 
-- **fixed**: (true / false) enable or disable the auto-dismiss functionality (default: false)
-- **size**: ('small' / 'medium' / 'large') customize the sizing of the alerts (default: 'medium')
-- **style**: ('default' / 'error' / 'notice' / 'warning') customize the styling of the alerts (default: 'default')
-- **location**: ('tl' / 'tr' / 'bl' / 'br' / 'tc' / 'bc') customize the position of the growl alerts (default: 'tr')
-- **delayOnHover**: (true / false) prevent the growl from dismissing when mouse is over. (default: true)
+- **delayOnHover**: while hovering over the alert, prevent it from being dismissed (true | false - **default**: true)
+- **duration**: the duration (in milliseconds) for which the alert is displayed (**default**: 3200)
+- **fixed**: whether the alert should be fixed rather than auto-dismissed (true | false - **default**: false)
+- **location**: the alert's position ('tl' | 'tr' | 'bl' | 'br' | 'tc' | 'bc' - **default**: 'tr')
+- **size**: the alert's size ('small' | 'medium' | 'large' - **default**: 'medium')
+- **style**: the alert's style ('default' | 'error' | 'notice' | 'warning' - **default**: 'default')
 
 ### Deprecations
 
@@ -67,4 +68,4 @@ Growl also supports some customization through the following options:
 
 ## Copyright
 
-Copyright (c) 2010 - 2015 Kevin Sylvestre. See LICENSE for details.
+Copyright (c) 2010 - 2016 Kevin Sylvestre. See LICENSE for details.
