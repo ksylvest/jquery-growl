@@ -1,11 +1,7 @@
 html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
+*, *::after, *::before {
   box-sizing: inherit; }
 
 body, html, p, h1, h2, h3, h4, h5, h6 {

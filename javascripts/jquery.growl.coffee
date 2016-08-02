@@ -1,7 +1,7 @@
 ###
 jQuery Growl
 Copyright 2015 Kevin Sylvestre
-1.3.1
+1.3.2
 ###
 
 "use strict"
@@ -110,7 +110,7 @@ class Growl
 
   remove: (callback) =>
     @$growl().remove()
-    callback()
+    callback?()
 
   animate: ($element, name, direction = 'in', callback) =>
     transition = Animation.transition($element)
