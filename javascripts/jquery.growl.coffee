@@ -31,20 +31,20 @@ class Growl
     delayOnHover: true
 
   @growl: (settings = {}) ->
-    @initialize()
     new Growl(settings)
-
-  @initialize: ->
-    $("body:not(:has(#growls))").append '<div id="growls" />'
 
   constructor: (settings = {}) ->
     @settings = $.extend {}, Growl.settings, settings
-    @$growls().attr 'class', @settings.location
+    @initialize(@settings.location)
     @render()
+
+  initialize: (location) ->
+    id = 'growls-' + location;
+    $('body:not(:has(#' + id + '))').append '<div id="' + id + '" />'
 
   render: =>
     $growl = @$growl()
-    @$growls().append $growl
+    @$growls(@settings.location).append $growl
     if @settings.fixed then @present() else @cycle()
     return
 
@@ -121,8 +121,9 @@ class Growl
     if transition? then $element.one(transition, callback) else callback()
     return
 
-  $growls: =>
-    @$_growls ?= $('#growls')
+  $growls: (location) =>
+    @$_growls ?= []
+    @$_growls[location] ?= $('#growls-' + location)
 
   $growl: =>
     @$_growl ?= $(@html())
