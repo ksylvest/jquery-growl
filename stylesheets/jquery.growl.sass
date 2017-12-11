@@ -14,37 +14,62 @@ $namespace: "growl"
 
 $black: #000
 $white: #FFF
+$small: 200px
+$medium: 250px
+$large: 300px
+$spacing: 10px
 
 $duration: 0.4s
 
-#growls
+.ontop
   z-index: 50000
   position: fixed
 
-  &.default
-    top: 10px
-    right: 10px
-  &.tl
-    top: 10px
-    left: 10px
-  &.tr
-    top: 10px
-    right: 10px
-  &.bl
-    bottom: 10px
-    left: 10px
-  &.br
-    bottom: 10px
-    right: 10px
-  &.tc
-    top: 10px
-    right: 10px
-    left: 10px
-  &.bc
-    bottom: 10px
-    right: 10px
-    left: 10px
-  &.tc,&.bc
+#growls
+  &-default
+    @extend .ontop
+    top: $spacing
+    right: $spacing
+  &-tl
+    @extend .ontop
+    top: $spacing
+    left: $spacing
+  &-tr
+    @extend .ontop
+    top: $spacing
+    right: $spacing
+  &-bl
+    @extend .ontop
+    bottom: $spacing
+    left: $spacing
+  &-br
+    @extend .ontop
+    bottom: $spacing
+    right: $spacing
+  &-tc
+    @extend .ontop
+    top: $spacing
+    right: $spacing
+    left: $spacing
+  &-bc
+    @extend .ontop
+    bottom: $spacing
+    right: $spacing
+    left: $spacing
+  &-cc
+    @extend .ontop
+    top: 50%
+    left: 50%
+    margin-left: $medium / -2;
+  &-cl
+    @extend .ontop
+    top: 50%
+    left: $spacing
+  &-cr
+    @extend .ontop
+    top: 50%
+    right: $spacing
+  &-tc,&-bc
     .#{$namespace}
       margin:
         left:  auto
@@ -63,17 +88,17 @@ $duration: 0.4s
     +opacity(0.0)
 
   &.#{$namespace}-small
-    width: 200px
-    padding: 5px
-    margin: 5px
+    width: $small
+    padding: $spacing * 0.5
+    margin: $spacing * 0.5
   &.#{$namespace}-medium
-    width: 250px
-    padding: 10px
-    margin: 10px
+    width: $medium
+    padding: $spacing
+    margin: $spacing
   &.#{$namespace}-large
-    width: 300px
-    padding: 15px
-    margin: 15px
+    width: $large
+    padding: $spacing * 1.5
+    margin: $spacing * 1.5
 
   &.#{$namespace}-default
     color: #FFF
