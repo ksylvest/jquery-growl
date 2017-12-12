@@ -1,7 +1,6 @@
-/*
- * jQuery Growl
+/* jQuery Growl
  * Copyright 2015 Kevin Sylvestre
- * 1.3.2
+ * 1.3.3
  */
 .ontop, #growls-default, #growls-tl, #growls-tr, #growls-bl, #growls-br, #growls-tc, #growls-bc, #growls-cc, #growls-cl, #growls-cr {
   z-index: 50000;
@@ -10,46 +9,36 @@
 #growls-default {
   top: 10px;
   right: 10px; }
-
 #growls-tl {
   top: 10px;
   left: 10px; }
-
 #growls-tr {
   top: 10px;
   right: 10px; }
-
 #growls-bl {
   bottom: 10px;
   left: 10px; }
-
 #growls-br {
   bottom: 10px;
   right: 10px; }
-
 #growls-tc {
   top: 10px;
   right: 10px;
   left: 10px; }
-
 #growls-bc {
   bottom: 10px;
   right: 10px;
   left: 10px; }
-
 #growls-cc {
   top: 50%;
   left: 50%;
   margin-left: -125px; }
-
 #growls-cl {
   top: 50%;
   left: 10px; }
-
 #growls-cr {
   top: 50%;
   right: 10px; }
-
 #growls-tc .growl, #growls-bc .growl {
   margin-left: auto;
   margin-right: auto; }

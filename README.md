@@ -68,4 +68,4 @@ Growl also supports some customization through the following options:
 
 ## Copyright
 
-Copyright (c) 2010 - 2016 Kevin Sylvestre. See LICENSE for details.
+Copyright (c) 2010 - 2018 Kevin Sylvestre. See LICENSE for details.

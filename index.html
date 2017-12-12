@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='UTF-8'>
-      <title>jQuery Growl</title>
-      <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-      <link href='stylesheets/jquery.growl.css' rel='stylesheet' type='text/css'>
-      <link href='stylesheets/sample.css' rel='stylesheet' type='text/css'>
-      <script src='javascripts/jquery.js' type='text/javascript'></script>
-      <script src='javascripts/jquery.growl.js' type='text/javascript'></script>
-      <script src='javascripts/sample.js' type='text/javascript'></script>
-      <script src='javascripts/rainbow.js' type='text/javascript'></script>
-      <script>
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-31911059-1']);
-        _gaq.push(['_trackPageview']);
-        
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
-    </meta>
-  </head>
-  <body>
-    <div class='content'>
-      <a href='https://github.com/ksylvest/jquery-growl'>
-        <img alt='Fork' class='fork' src='images/fork.png'>
-      </a>
-      <h1>jQuery Growl</h1>
-      <p>Growl is a jQuery plugin designed to provide informative messages in the browser.</p>
-      <h2>Example</h2>
-      <section class='example'>
-        <p>
-          <ul>
-            <li>
-              <a class='error' href='#'>Error!</a>
-            </li>
-            <li>
-              <a class='notice' href='#'>Notice!</a>
-            </li>
-            <li>
-              <a class='warning' href='#'>Warning!</a>
-            </li>
-          </ul>
-        </p>
-      </section>
-      <h2>Installation</h2>
-      <p>To install download one of these packages and include the jquery.growl.js and jquery.growl.css files in your head with the following:</p>
-      <section class='formats'>
-        <div class='format'>
-          <a class='zip' href='packages/jquery.growl.zip'></a>
-        </div>
-        <div class='format'>
-          <a class='tar' href='packages/jquery.growl.tar'></a>
-        </div>
-      </section>
-      <pre><code data-language='html'>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;&#x000A;&lt;script src=&quot;javascript/jquery.growl.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;&#x000A;&lt;link href=&quot;stylesheets/jquery.growl.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
-      <h2>Example</h2>
-      <p>Growling is easy:</p>
-      <pre><code data-language='html'>&lt;script type=&quot;text/javascript&quot;&gt;&#x000A;  $.growl({ title: &quot;Growl&quot;, message: &quot;The kitten is awake!&quot; });&#x000A;  $.growl.error({ message: &quot;The kitten is attacking!&quot; });&#x000A;  $.growl.notice({ message: &quot;The kitten is cute!&quot; });&#x000A;  $.growl.warning({ message: &quot;The kitten is ugly!&quot; });&#x000A;&lt;/script&gt;</code></pre>
-      <p class='copy'>
-        Copyright (c) 2010 - 2016
-        <a href='https://ksylvest.com/'>Kevin Sylvestre</a>
-      </p>
-      <p class='links'>
-        <a href='https://github.com/ksylvest'>GitHub</a>
-        <a href='https://plus.google.com/+KevinSylvestre?rel=author'>Google</a>
-        <a href='https://twitter.com/ksylvest'>Twitter</a>
-      </p>
-    </div>
-  </body>
+<head>
+<meta charset='UTF-8'>
+<title>jQuery Growl</title>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='stylesheets/jquery.growl.css' rel='stylesheet' type='text/css'>
+<link href='stylesheets/sample.css' rel='stylesheet' type='text/css'>
+<script src='javascripts/jquery.js' type='text/javascript'></script>
+<script src='javascripts/jquery.growl.js' type='text/javascript'></script>
+<script src='javascripts/sample.js' type='text/javascript'></script>
+<script src='javascripts/rainbow.js' type='text/javascript'></script>
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31911059-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</meta>
+</head>
+<body>
+<div class='content'>
+<a href='https://github.com/ksylvest/jquery-growl'>
+<img alt='Fork' class='fork' src='images/fork.png'>
+</a>
+<h1>jQuery Growl</h1>
+<p>Growl is a jQuery plugin designed to provide informative messages in the browser.</p>
+<h2>Example</h2>
+<section class='example'>
+<p>
+<ul>
+<li>
+<a class='error' href='#'>Error!</a>
+</li>
+<li>
+<a class='notice' href='#'>Notice!</a>
+</li>
+<li>
+<a class='warning' href='#'>Warning!</a>
+</li>
+</ul>
+</p>
+</section>
+<h2>Installation</h2>
+<p>To install download one of these packages and include the jquery.growl.js and jquery.growl.css files in your head with the following:</p>
+<section class='formats'>
+<div class='format'>
+<a class='zip' href='packages/jquery.growl.zip'></a>
+</div>
+<div class='format'>
+<a class='tar' href='packages/jquery.growl.tar'></a>
+</div>
+</section>
+<pre><code data-language='html'>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;&#x000A;&lt;script src=&quot;javascript/jquery.growl.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;&#x000A;&lt;link href=&quot;stylesheets/jquery.growl.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</code></pre>
+<h2>Example</h2>
+<p>Growling is easy:</p>
+<pre><code data-language='html'>&lt;script type=&quot;text/javascript&quot;&gt;&#x000A;  $.growl({ title: &quot;Growl&quot;, message: &quot;The kitten is awake!&quot; });&#x000A;  $.growl.error({ message: &quot;The kitten is attacking!&quot; });&#x000A;  $.growl.notice({ message: &quot;The kitten is cute!&quot; });&#x000A;  $.growl.warning({ message: &quot;The kitten is ugly!&quot; });&#x000A;&lt;/script&gt;</code></pre>
+<p class='copy'>
+Copyright (c) 2010 - 2018
+<a href='https://ksylvest.com/'>Kevin Sylvestre</a>
+</p>
+<p class='links'>
+<a href='https://github.com/ksylvest'>GitHub</a>
+<a href='https://plus.google.com/+KevinSylvestre?rel=author'>Google</a>
+<a href='https://twitter.com/ksylvest'>Twitter</a>
+</p>
+</div>
+</body>
 </html>
