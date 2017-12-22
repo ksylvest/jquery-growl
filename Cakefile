@@ -16,8 +16,8 @@ command = (name, args...) ->
 task "watch", "SASS and CoffeeScript", (options) ->
   command "sass", "--watch", "--sourcemap=none", "stylesheets:stylesheets"
   command "sass", "--watch", "--sourcemap=none", "spec:spec"
-  command "coffee", "-wc", "javascripts"
-  command "coffee", "-wc", "spec"
+  command "coffee", "--watch", "--compile", "--transpile", "javascripts"
+  command "coffee", "--watch", "--compile", "--transpile", "spec"
 
 task "compile", "HAML", (opions) ->
   command "haml", "index.haml", "index.html"
