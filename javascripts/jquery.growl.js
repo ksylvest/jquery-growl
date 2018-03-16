@@ -246,7 +246,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "container",
         value: function container(content) {
-          return "<div class='" + this.settings.namespace + " " + this.settings.namespace + "-" + this.settings.style + " " + this.settings.namespace + "-" + this.settings.size + "'>\n  " + content + "\n</div>";
+          if (this.settings.id) {
+                return "<div id='" + this.settings.id + "' class='" + this.settings.namespace + " " + this.settings.namespace + "-" + this.settings.style + " " + this.settings.namespace + "-" + this.settings.size + "'>\n  " + content + "\n</div>";
+            } else {
+                return "<div class='" + this.settings.namespace + " " + this.settings.namespace + "-" + this.settings.style + " " + this.settings.namespace + "-" + this.settings.size + "'>\n  " + content + "\n</div>";
+            }
         }
       }]);
 
@@ -257,6 +261,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     Growl.settings = {
       namespace: 'growl',
+      id: '',
       duration: 3200,
       close: "&#215;",
       location: "default",
